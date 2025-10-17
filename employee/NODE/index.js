@@ -1,6 +1,6 @@
-const express = require("express");  // framework pre definedfunctions //
-const dotenv = require("dotenv");    //credencials secure like mongoDb,port//
-const connectDB = require("./config/db"); //mongo Db connect //
+const express = require("express"); 
+const dotenv = require("dotenv");   
+const connectDB = require("./config/db"); 
 const Employee = require("./routes/EmployeeRoutes");
 const cors = require("cors");  //front end 3000 port backend 5000 hnadle blocks in server //
 

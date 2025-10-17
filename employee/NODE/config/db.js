@@ -1,23 +1,9 @@
-// const mongoose = require("mongoose");
 
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(process.env.MONGO_URI);
-//     console.log("MongoDB Connected...");
-//   } catch (error) {
-//     console.error(error.message);
-//     process.exit(1);
-//   }
-// };
-
-// module.exports = connectDB;
-
-// db.js
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',         // your DB username
+  user: 'root',        
   password: '',         // your DB password
   database: 'employee_db'  // your DB name
 });

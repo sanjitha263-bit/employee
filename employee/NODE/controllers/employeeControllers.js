@@ -2,22 +2,7 @@ const {Router} =require("express");
 const Product =require("../models/employee");
 const db = require('../config/db')
 
-// //postProduct
 
-// exports.CreateProduct = async (req , res)=>{
-//     try{
-//         const  { name,price,category,quantity } = req.body;
-//         let product = await Product.findOne({name});
-//         if (product){
-//             return res.status(400).json({msg: "Product already exist"});
-//     }
-//         product = new Product({
-//             name,
-//             price,
-//             category,
-//             quantity
-//         });
-//         await product.save();
 //         res.status(201).json({msg: "Product created successfully",product});
 
 //         }catch (err){
