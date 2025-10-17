@@ -1,4 +1,4 @@
-// EmployeeList.jsx
+
 import { useEffect, useState } from "react";
 
 export default function EmployeeList() {
@@ -12,7 +12,7 @@ export default function EmployeeList() {
   };
 
   useEffect(() => {
-    fetchEmployees(); // automatically runs when page loads
+    fetchEmployees(); 
   }, []);
 
   return (

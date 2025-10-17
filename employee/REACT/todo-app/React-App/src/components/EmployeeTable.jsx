@@ -6,16 +6,13 @@ const EmployeeTable = () => {
   const [employees, setEmployees] = useState([]);
   const navigate = useNavigate();
 
-  //  useEffect(() => {
-  //   fetchEmployees();
-  // }, [searchTerm]); // Triggers when searchTerm changes
-
+  
 useEffect(() => {
   const delay = setTimeout(() => {
     fetchEmployees();
-  }, 500); // wait 500ms after typing stops
+  }, 500); 
 
-  return () => clearTimeout(delay); // cleanup
+  return () => clearTimeout(delay); 
 }, [searchTerm]);
  
     const fetchEmployees = async () => {
@@ -45,7 +42,7 @@ useEffect(() => {
       })
         .then((res) => {
           if (!res.ok) throw new Error("Delete failed");
-          // update local state
+        
           setEmployees((prev) =>
             prev.filter((e) => e.employee_Id !== empID)
           );
@@ -107,8 +104,7 @@ useEffect(() => {
                   <td className="px-4 py-2">{emp.status}</td>
                   <td className="px-4 py-2 flex space-x-2">
                     <button
-                    //  onClick={() => handleView(emp)}
-                      // onClick={() => navigate("/EmployeeDetails")}
+                    
                      onClick={() => navigate(`/EmployeeDetails/${emp.employee_Id}`)}
 
                       title="View"

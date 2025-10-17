@@ -40,25 +40,11 @@ const EditEmployeeDetails = () => {
       .then((res) => {
         if (!res.ok) throw new Error('Update failed');
         alert('Employee updated successfully!');
-        navigate('/'); // Or wherever you want to go
+        navigate('/'); 
       })
       .catch((err) => console.error(err));
   };
 
-//   const handleImageChange = (e) => {
-//   const file = e.target.files[0]; // user select pannina first file
-//   if (file) {
-//     // 1️⃣ Preview (frontend)
-//     const previewURL = URL.createObjectURL(file);
-
-//     // 2️⃣ Save both file + preview in state
-//     setFormData((prev) => ({
-//       ...prev,
-//       photo: file,        // backend ku send panna actual file
-//       preview: previewURL // frontend la preview kaattanum
-//     }));
-//   }
-// };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">

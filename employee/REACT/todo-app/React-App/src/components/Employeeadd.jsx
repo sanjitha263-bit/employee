@@ -16,7 +16,7 @@ const Employeeadd = () => {
     project: "",
     type: "",
     status: "",
-    photo: null, // base64 or file?
+    photo: null, 
   });
 
   useEffect(() => {
@@ -34,16 +34,16 @@ const Employeeadd = () => {
   };
 
   const handleImageChange = (e) => {
-  const file = e.target.files[0]; // user select pannina first file
+  const file = e.target.files[0]; 
   if (file) {
-    // 1️⃣ Preview (frontend)
+    
     const previewURL = URL.createObjectURL(file);
 
-    // 2️⃣ Save both file + preview in state
+    
     setFormData((prev) => ({
       ...prev,
-      photo: file,        // backend ku send panna actual file
-      preview: previewURL // frontend la preview kaattanum
+      photo: file,        
+      preview: previewURL 
     }));
   }
 };
@@ -52,7 +52,7 @@ const Employeeadd = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Use FormData if sending file
+
    const payload = new FormData();
     payload.append("employee_name", formData.employee_name);
     payload.append("employee_Id", formData.employee_Id);
@@ -62,10 +62,9 @@ const Employeeadd = () => {
     payload.append("type", formData.type);
     payload.append("status", formData.status);
 
-    // If you have an actual file input separate from base64, append it
-    // For now we'll send base64 string:
+    
 if (formData.photo) {
-      payload.append("photo", formData.photo); // ✅ correct way
+      payload.append("photo", formData.photo); 
     }
     
     const url = isEdit
@@ -77,7 +76,7 @@ if (formData.photo) {
     fetch(url, {
       method,
       body: payload,
-      // body: JSON.stringify(formData),
+      
     })
       .then(res => res.json())
       .then(()=>navigate("/"))
@@ -114,13 +113,7 @@ if (formData.photo) {
       className="w-24 h-24 mt-2 rounded-full object-cover"
     />
   )}
-          {/* {formData.photo && (
-            <img
-              src={formData.photo}
-              alt="preview"
-              className="mt-2 w-24 h-24 object-cover rounded border"
-            />
-          )} */}
+         
         </div>
 
         <input
